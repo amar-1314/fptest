@@ -1,0 +1,27 @@
+<h3>User Listing</h3>
+<br>
+<table class="ul-table">
+    <tr>
+        <td width="50px" class="h5">#</td>
+        <td class="h5">First Name</td>
+        <td class="h5">Last Name</td>
+        <td class="h5">Office</td>
+        <td></td>
+    </tr>
+</table>
+<table class="table table-sm table-hover">
+    <tr *ngFor="let employee of employeeList index as index">
+        <td width="50px"><strong>{{index+1}}</strong></td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.office}}</td>
+        <td>
+            <a class="btn" (click)="onEdit(employee)">
+                <i class="fa fa-pencil-square-o"></i>
+            </a>
+            <a class="btn text-danger" (click)="onDelete(employee.$key)">
+                <i class="fa fa-trash-o"></i>
+            </a>
+        </td>
+    </tr>
+</table>
